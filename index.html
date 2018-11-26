@@ -24,6 +24,11 @@
     #clockWrapper{
         width: 100%;
     }
+	body.selected #clockWrapper
+	{
+		background-color: lightblue;
+	}
+
     body.selected #addButton{
       display:none;
     }
@@ -47,10 +52,16 @@
     #clockWrapper h1{
       margin-top: 100px;
     }
-	#tzList button.box div.overlay{ //this edits the first button to choose the times
-		//background-color: blue;
+	#tzList button.box { 
+		margin: 5px;
 		
 	}
+	#tzList button.box  div.overlay{ 
+		 animation: slideIn 1s;
+	  animation-fill-mode: both;
+	}
+	
+
 
   }
   /* wide screen */
