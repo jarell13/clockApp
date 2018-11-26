@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -48,7 +48,7 @@
       margin-top: 100px;
     }
 	#tzList button.box div.overlay{ //this edits the first button to choose the times
-		
+		//background-color: blue;
 		
 	}
 
@@ -208,9 +208,6 @@
       markup += "<button class='box' onclick='tzSelected(" + i + ")'> <h1>" + tzname + "</h1> <iframe src='" + url + "'></iframe> <div class='overlay'></div></button>"
     }
     document.getElementById("tzList").innerHTML = markup;
-	$("#tzList").addClass("animated slideInRight");
-	$("#tzList").addClass("animated slideOutLeft");
-	
     if($("html").width() > 600){
       tzSelected(0);
     }
