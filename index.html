@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -30,20 +31,36 @@
 	}
 
     body.selected #addButton{
-      display:none;
+	  animation: slideOutLeft .2s;
+	  animation-fill-mode: both;
     }
     body.selected #backButton{
+	  animation: slideInRight .2s;
+	  animation-fill-mode: both;
+      display:block;
+    }
+	body.select2 button#backButton.action i.fas.fa-arrow-left {
+	  animation: slideOutRight .05s;
+	  animation-fill-mode: both;
       display:block;
     }
     body.selected #tzList{
-      display: none;
+      animation: slideOutLeft .2s;
+	  animation-fill-mode: both;
     }
+	#clockFrame.light{
+    	  animation: slideInRight .2s;
+    	  animation-fill-mode: both;
+        display: block;
+	}
     body.selected #clockWrapper{
+  	  animation: slideInRight .2s;
+  	  animation-fill-mode: both;
       display: block;
     }
 
     body #tzList{
-      display: block;
+        display: block;
 	  
     }
     body #clockWrapper{
@@ -51,17 +68,19 @@
     }
     #clockWrapper h1{
       margin-top: 100px;
-    }
-	#tzList button.box { 
-		margin: 5px;
-		
-	}
-	#tzList button.box  div.overlay{ 
-		 animation: slideIn 1s;
+	  animation: slideInRight .2s;
 	  animation-fill-mode: both;
+	  display:block;
+    }
+	body.selected #tzList button.box { 
+		margin: 5px;
+    	animation: slideOutLeft .2s;
+    	animation-fill-mode: both;
 	}
-	
-
+	body.selected #tzList button.box div.overlay{ 
+        animation: slideOutLeft 1s;
+  	  animation-fill-mode: both;	
+	}	
 
   }
   /* wide screen */
@@ -200,6 +219,7 @@
   }
   function backClicked(){
     $("body").removeClass("selected");
+	$("body").addClass("select2");
     setTimeout('$("#tzList button.box").removeClass("active")', 1000);
   }
   function start(){
