@@ -29,9 +29,17 @@
 	{
 		background-color: lightblue;
 	}
+	body.select2 #clockWrapper
+	{
+		background-color: lightblue;
+	}
 
     body.selected #addButton{
 	  animation: slideOutLeft .2s;
+	  animation-fill-mode: both;
+    }
+    body.select2 #addButton{
+	  animation: slideInLeft .2s;
 	  animation-fill-mode: both;
     }
     body.selected #backButton{
@@ -48,6 +56,10 @@
       animation: slideOutLeft .2s;
 	  animation-fill-mode: both;
     }
+    body.select2 #tzList{
+      animation: slideInLeft .2s;
+	  animation-fill-mode: both;
+    }
 	#clockFrame.light{
     	  animation: slideInRight .2s;
     	  animation-fill-mode: both;
@@ -58,7 +70,7 @@
   	  animation-fill-mode: both;
       display: block;
     }
-
+ 
     body #tzList{
         display: block;
 	  
@@ -77,8 +89,17 @@
     	animation: slideOutLeft .2s;
     	animation-fill-mode: both;
 	}
+	body.select2 #tzList button.box { 
+		margin: 5px;
+    	animation: slideInRight .2s;
+    	animation-fill-mode: both;
+	}
 	body.selected #tzList button.box div.overlay{ 
         animation: slideOutLeft 1s;
+  	  animation-fill-mode: both;	
+	}
+	body.select2 #tzList button.box div.overlay{ 
+        animation: slideInRight 1s;
   	  animation-fill-mode: both;	
 	}	
 
@@ -220,6 +241,7 @@
   function backClicked(){
     $("body").removeClass("selected");
 	$("body").addClass("select2");
+	$("#body").addClass("animated slideInLeft");
     setTimeout('$("#tzList button.box").removeClass("active")', 1000);
   }
   function start(){
