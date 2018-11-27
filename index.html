@@ -39,17 +39,8 @@
 	  animation-fill-mode: both;
 	  display: block;
     }
-    body.select2 #addButton{
-	  animation: slideInLeft .2s;
-	  animation-fill-mode: both;
-	  display: block;
-    }
 
-    body.selected #backButton{
-	  animation: slideInRight .5s;
-	  animation-fill-mode: both;
-      display:block;
-    }
+    
 	body.select2 button#backButton.action i.fas.fa-arrow-left {
       display:block;
     }
@@ -57,8 +48,9 @@
       animation: slideOutLeft .2s;
 	  animation-fill-mode: both;
     }
-    body.selected #tzList{
-     
+    body.select2 #tzList{
+      animation: slideInLeft .2s;
+	  animation-fill-mode: both;
     }
 	html body #clockFrame.light{
     	  animation: slideInRight .2s;
@@ -93,13 +85,24 @@
 
 	}
 	body.selected #tzList button.box div.overlay{ 
-      animation: slideOutLeft 1s;
+        animation: slideOutLeft 1s;
   	  animation-fill-mode: both;	
 	}
-	body.select2 #tzList button.box div.overlay{ 
-
+	body.selected #clockWrapper h1{ 
+        animation: slideInRight 1s;
+  	  animation-fill-mode: both;
+	  display: block;
 	}
-    
+	body.selected #clockFrame.light{
+        animation: slideInRight 1s;
+  	  animation-fill-mode: both;
+	  display: block;
+	}
+	body.selected button#backButton.action{
+        animation: slideInRight 1s;
+  	  animation-fill-mode: both;
+	  display: block;
+	}
 
   }
   /* wide screen */
@@ -238,10 +241,9 @@
   }
   function backClicked(){
     $("body").removeClass("selected");
-	//$("body").addClass("select2");
+	$("body").addClass("select2");
+	$("#body").addClass("animated slideInLeft");
     setTimeout('$("#tzList button.box").removeClass("active")', 1000);
-	//$("body").addClass("animated slideInLeft");
-	
   }
   function start(){
     $("#tsSelectOverlay").fadeOut(0);
