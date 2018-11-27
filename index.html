@@ -37,14 +37,16 @@
     body.selected #addButton{
 	  animation: slideOutLeft .2s;
 	  animation-fill-mode: both;
-	  display: none;
-    }
-    body.select2 #addButton{
-	
 	  display: block;
     }
+    body.select2 #addButton{
+	  animation: slideInLeft .2s;
+	  animation-fill-mode: both;
+	  display: block;
+    }
+
     body.selected #backButton{
-	  animation: slideInRight .2s;
+	  animation: slideInRight .5s;
 	  animation-fill-mode: both;
       display:block;
     }
@@ -55,17 +57,18 @@
       animation: slideOutLeft .2s;
 	  animation-fill-mode: both;
     }
-    body.select2 #tzList{
-      animation: slideInLeft .2s;
-	  animation-fill-mode: both;
+    body.selected #tzList{
+     
     }
-	#clockFrame.light{
+	html body #clockFrame.light{
     	  animation: slideInRight .2s;
     	  animation-fill-mode: both;
         display: block;
 	}
     body.selected #clockWrapper{
       display: block;
+	  animation: slideInRight .5s;
+	  animation-fill-mode: both;
     }
  
     body #tzList{
@@ -76,8 +79,9 @@
     }
     #clockWrapper h1{
       margin-top: 100px;
-	 
 	  display:block;
+  	animation: slideInRight .2s;
+  	animation-fill-mode: both;
     }
 	body.selected #tzList button.box { 
 		margin: 5px;
@@ -86,17 +90,16 @@
 	}
 	body.select2 #tzList button.box { 
 		margin: 5px;
-    	animation: slideInRight .2s;
-    	animation-fill-mode: both;
+
 	}
 	body.selected #tzList button.box div.overlay{ 
-        animation: slideOutLeft 1s;
+      animation: slideOutLeft 1s;
   	  animation-fill-mode: both;	
 	}
 	body.select2 #tzList button.box div.overlay{ 
-        animation: slideInRight 1s;
-  	  animation-fill-mode: both;	
-	}	
+
+	}
+    
 
   }
   /* wide screen */
@@ -235,9 +238,10 @@
   }
   function backClicked(){
     $("body").removeClass("selected");
-	$("body").addClass("select2");
-	$("#body").addClass("animated slideInLeft");
+	//$("body").addClass("select2");
     setTimeout('$("#tzList button.box").removeClass("active")', 1000);
+	//$("body").addClass("animated slideInLeft");
+	
   }
   function start(){
     $("#tsSelectOverlay").fadeOut(0);
