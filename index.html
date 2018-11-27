@@ -244,10 +244,23 @@
     $("#addButton").fadeOut();
   }
   function backClicked(){
-    $("body").removeClass("selected");
-	$("body").addClass("select2");
-	$("#body").addClass("animated slideInLeft");
-    setTimeout('$("#tzList button.box").removeClass("active")', 1000);
+   // $("body").removeClass("selected");
+	//$("body").addClass("select2");
+	//$("#body").addClass("animated slideInLeft");
+   // setTimeout('$("#tzList button.box").removeClass("active")', 1000);
+   if($("body").attr("class") === "select2"){ // go back to itemList
+     $("body").removeClass("select2");
+     $("body").addClass("selected");
+  document.getElementById("clockWrapper").className = "";
+  $("#clockWrapper").addClass("animated slideInLeft");
+     
+   }
+   else{ // go back to rssList
+     $("body").removeClass("selected select2");
+  document.getElementById("clockWrapper").className = "";
+  $("#clockWrapper").addClass("animated slideOutRight");
+     setTimeout('$("#tzList").removeClass("active")', 500);
+   }
   }
   function start(){
     $("#tsSelectOverlay").fadeOut(0);
