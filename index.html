@@ -41,6 +41,11 @@
 	  animation-fill-mode: both;
 	  display: block;
     }
+	body.select2 #addButton{
+  	  animation: slideInRight .2s;
+  	  animation-fill-mode: both;
+  	  display: none;
+	}
 	
 	body.select2 button#backButton.action i.fas.fa-arrow-left {
       display:block;
@@ -53,6 +58,11 @@
       animation: slideInLeft .2s;
 	  animation-fill-mode: both;
     }
+	body.select2 #tzList button {
+    	animation: slideInLeft .2s;
+    	animation-fill-mode: both;
+		display: block;
+	}
 	html body #clockFrame.light{
     	  animation: slideInRight .2s;
     	  animation-fill-mode: both;
@@ -81,7 +91,9 @@
     	animation: slideOutLeft .2s;
     	animation-fill-mode: both;
 	}
-	body.select2 #tzList button.box { 
+	body.select2 #tzList button div.overlay{ 
+    	animation: slideOutLeft .2s;
+    	animation-fill-mode: both;
 		margin: 5px;
 
 	}
@@ -244,23 +256,23 @@
     $("#addButton").fadeOut();
   }
   function backClicked(){
-   // $("body").removeClass("selected");
+    $("body").removeClass("selected");
 	//$("body").addClass("select2");
-	//$("#body").addClass("animated slideInLeft");
-   // setTimeout('$("#tzList button.box").removeClass("active")', 1000);
-   if($("body").attr("class") === "select2"){ // go back to itemList
+	$("#body").addClass("animated slideInLeft");
+    setTimeout('$("#tzList button.box").removeClass("active")', 1000);
+   /*if($("body").attr("class") === "select2"){ 
      $("body").removeClass("select2");
      $("body").addClass("selected");
   document.getElementById("clockWrapper").className = "";
   $("#clockWrapper").addClass("animated slideInLeft");
      
    }
-   else{ // go back to rssList
+   else{ 
      $("body").removeClass("selected select2");
   document.getElementById("clockWrapper").className = "";
   $("#clockWrapper").addClass("animated slideOutRight");
      setTimeout('$("#tzList").removeClass("active")', 500);
-   }
+   }*/
   }
   function start(){
     $("#tsSelectOverlay").fadeOut(0);
