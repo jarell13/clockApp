@@ -35,16 +35,14 @@
 	tzList button.box{
 		border-radius: 0px;
 	}
-
     body.selected #addButton{
 	  animation: slideOutLeft .2s;
 	  animation-fill-mode: both;
 	  display: block;
     }
-	body.select2 #addButton{
-  	  animation: slideInRight .2s;
+	.select2 #addButton{
+  	  animation: slideInLeft .2s;
   	  animation-fill-mode: both;
-  	  display: none;
 	}
 	
 	body.select2 button#backButton.action i.fas.fa-arrow-left {
@@ -257,7 +255,7 @@
   }
   function backClicked(){
     $("body").removeClass("selected");
-	//$("body").addClass("select2");
+	$("body").addClass("select2");
 	$("#body").addClass("animated slideInLeft");
     setTimeout('$("#tzList button.box").removeClass("active")', 1000);
    /*if($("body").attr("class") === "select2"){ 
